@@ -626,6 +626,17 @@ a { color: var(--blue); text-decoration: none; }
   padding: 6px 18px;
 }
 
+.foot-meta .stale {
+  margin: 10px 0 2px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 149, 0, 0.12);
+  color: var(--orange);
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
 .foot-meta .row {
   display: flex;
   justify-content: space-between;
