@@ -1,0 +1,37 @@
+name: Ежемесячная проверка данных
+
+on:
+  schedule:
+    # 1-го числа каждого месяца, 06:17 UTC (~09:17 МСК).
+    # Не ровно в 0 минут — так меньше шансов попасть в общую очередь GitHub.
+    - cron: '17 6 1 * *'
+  # Позволяет запустить проверку руками: вкладка Actions → Run workflow.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Проверить данные
+        run: node scripts/check-data.mjs > report.md
+
+      - name: Завести issue с отчётом
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="Пора обновить дайджест — $(date -u '+%B %Y')"
+          gh issue create \
+            --title "$TITLE" \
+            --body-file report.md \
+            --label "обновление данных" \
+            || gh issue create --title "$TITLE" --body-file report.md
