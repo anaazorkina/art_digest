@@ -439,8 +439,18 @@
 
   function renderFooter() {
     var live = ALL.filter(function (e) { return e._status !== 'ended'; }).length;
+
+    // Данные не врут, когда устаревают, — они пустеют. Честно предупреждаем об этом.
+    var age = META.digestUpdated ? daysBetween(parseDate(META.digestUpdated), today()) : null;
+    var stale = age !== null && age > (S.staleAfterDays || 45);
+
     document.getElementById('foot-meta').innerHTML =
-      '<div class="row"><span class="k">Кураторский дайджест</span><span class="v">обновлён ' + esc(META.digestUpdated) + ' · раз в месяц</span></div>' +
+      (stale
+        ? '<div class="stale">Дайджест не обновлялся ' + age + ' ' + plural(age, 'день', 'дня', 'дней') +
+          '. Часть выставок уже закрылась, а новые сюда ещё не попали.</div>'
+        : '') +
+      '<div class="row"><span class="k">Кураторский дайджест</span><span class="v">обновлён ' + esc(META.digestUpdated) +
+        (age !== null ? ' · ' + (age === 0 ? 'сегодня' : age + ' ' + plural(age, 'день', 'дня', 'дней') + ' назад') : '') + '</span></div>' +
       '<div class="row"><span class="k">Блок «Сейчас хайпует»</span><span class="v">проверен ' + esc(META.hypeChecked) + ' · раз в неделю</span></div>' +
       '<div class="row"><span class="k">Сверка дат</span><span class="v">' + esc(META.datesChecked) + '</span></div>' +
       '<div class="row"><span class="k">В базе</span><span class="v">' + ALL.length + ' выставок (' + live + ' актуальных) и ' + PERM.length + ' постоянных экспозиций</span></div>';
