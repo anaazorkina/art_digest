@@ -191,15 +191,20 @@
       .sort(function (a, b) { return b._score - a._score; });
   }
 
-  function permFor(cityId) {
-    // Временные фильтры к постоянным экспозициям неприменимы: они открыты всегда.
+  // Все постоянные экспозиции города, подходящие под фильтр темы.
+  // Временные фильтры к ним неприменимы: они открыты всегда.
+  function permAll(cityId) {
     if (state.period !== 'any') return [];
     return PERM
       .filter(function (p) {
         return p.city === cityId && (state.category === 'all' || p.category === state.category);
       })
-      .sort(function (a, b) { return b._weight - a._weight; })
-      .slice(0, S.permanentMax);
+      .sort(function (a, b) { return b._weight - a._weight; });
+  }
+
+  // То, что реально попадёт на экран.
+  function permFor(cityId) {
+    return permAll(cityId).slice(0, S.permanentMax);
   }
 
   function buildSections(cityId) {
@@ -385,9 +390,13 @@
         '</div></div>';
     }
 
+    var permTotal = permAll(state.city).length;
+
     out += sectionHTML({
       title: 'Постоянные экспозиции',
-      sub: 'Идти можно в любой день — и это часто сильнее, чем временная выставка по соседству.',
+      sub: perm.length < permTotal
+        ? 'Идти можно в любой день. Показаны ' + perm.length + ' самых заметных из ' + permTotal + '.'
+        : 'Идти можно в любой день — и это часто сильнее, чем временная выставка по соседству.',
       items: perm, mod: 'perm', render: permCardHTML
     });
 
@@ -398,7 +407,8 @@
     var city = CITIES.filter(function (c) { return c.id === state.city; })[0];
     var pool = poolFor(state.city, false).slice(0, city.quota);
     var closing = pool.filter(function (ex) { return ex._closingSoon; }).length;
-    var perm = PERM.filter(function (p) { return p.city === state.city; }).length;
+    // Считаем то, что видно на экране, а не то, что лежит в базе.
+    var perm = permFor(state.city).length;
     var d = today();
 
     var parts = ['Сегодня ' + fmtDate(d, false)];
