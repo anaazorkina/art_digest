@@ -74,6 +74,7 @@ window.CITIES = [
       { id: 'mispxx',     name: 'Музей искусства Санкт-Петербурга XX–XXI вв.', site: 'https://mispxx-xxi.ru', weight: 2 },
       /* --- расширение --- */
       { id: 'ethno',      name: 'Российский этнографический музей',      site: 'https://ethnomuseum.ru', weight: 2 },
+      { id: 'peterhof',   name: 'Музей-заповедник «Петергоф» (включая Ораниенбаум)', site: 'https://peterhofmuseum.ru', weight: 2 },
       { id: 'spbhistory', name: 'Музей истории Санкт-Петербурга (Петропавловская крепость)', site: 'https://www.spbmuseum.ru', weight: 2 },
       { id: 'faberge',    name: 'Музей Фаберже',                         site: 'https://fabergemuseum.ru', weight: 2 },
       { id: 'kunstkamera', name: 'Кунсткамера',                          site: 'https://www.kunstkamera.ru', weight: 2 },
@@ -133,7 +134,8 @@ window.CITIES = [
     quota: 10,
     trusted: [
       /* --- ядро --- */
-      { id: 'chelmusart', name: 'Челябинский музей изобразительных искусств', site: 'https://chelmusart.ru', weight: 2 },
+      { id: 'chelmusart', name: 'Челябинский музей изобразительных искусств', site: 'https://chelmusart.ru', weight: 2,
+        notice: 'Картинная галерея на ул. Труда, 92а закрыта на ремонт. Выставки идут на площадке на площади Революции, 1 (проверено 31.08.2026).' },
       // Бывший Челябинский областной краеведческий музей — в 2015 переименован.
       // Это один и тот же музей на ул. Труда, 100, отдельного краеведческого в городе нет.
       { id: 'chelmuseum', name: 'Исторический музей Южного Урала',       site: 'https://chelmuseum.ru', weight: 2 },
