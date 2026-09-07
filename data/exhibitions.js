@@ -356,6 +356,100 @@ window.EXHIBITIONS = [
     media: []
   },
 
+  {
+    id: 'msk-zilart-ludwig',
+    title: 'Русский музей в ЗИЛАРТе. Шедевры искусства второй половины XX века. Дар Петера и Ирене Людвиг',
+    venueId: 'zilart',
+    venue: 'Музей «ЗИЛАРТ», выставочный зал, 2 этаж',
+    city: 'moscow',
+    category: 'contemporary',
+    start: '2026-09-05',
+    end: '2027-02-07',
+    address: 'бульвар Братьев Весниных, 3',
+    url: 'https://zilartmuseum.ru/exhibitions/',
+    ticketUrl: 'https://tickets.zilartmuseum.ru',
+    price: null,
+    summary: 'Больше ста работ из собрания Русского музея — коллекция, которую немцы Петер и Ирене Людвиг подарили музею в 1994 году. Пикассо, Уорхол, Бойс, Лихтенштейн, Твомбли, Кунс, Кифер рядом с Кабаковым и Булатовым. Куратор — Александр Боровский, маршрут разбит на поп-арт, гиперреализм, неоэкспрессионизм и абстракцию.',
+    why: 'Западное искусство второй половины века такого уровня в Москве не показывали давно, а собрание Людвигов почти не выезжает из Петербурга. Плюс это первая смена экспозиции в новом музее — то есть повод посмотреть заодно и само здание.',
+    signals: { institution: 2, artist: 3, scale: 3, curator: 3, rarity: 3, media: 3, novelty: 3 },
+    hype: { reason: 'Открытие 4 сентября прошло с министром культуры, за три дня о выставке написали «Известия», «Коммерсантъ», РБК Стиль, Sobaka.ru, «Портал Культура» и городские медиа.', mentions30d: 3 },
+    discovery: false,
+    source: {
+      primary: 'https://zilartmuseum.ru/exhibitions/',
+      retrieved: '2026-09-07',
+      lastChecked: '2026-09-07',
+      confidence: 'high',
+      note: 'Даты и этаж — с официального сайта музея. Вход по сеансам с ограниченным числом мест.'
+    },
+    media: [
+      { title: 'Уникальная выставка Русского музея открылась в «ЗИЛАРТе» — Известия', url: 'https://iz.ru/2161317/2026-09-04/unikalnaia-vystavka-gosudarstvennogo-russkogo-muzeia-otkrylas-v-muzee-zilart' },
+      { title: 'Шедевры искусства второй половины XX века — сайт Москвы', url: 'https://www.mos.ru/news/item/175347073/' },
+      { title: 'Работы Уорхола, Бойса, Баския, Новикова покажут в «ЗИЛАРТе» — Sobaka.ru', url: 'https://www.sobaka.ru/entertainment/art/219652' },
+      { title: 'Александр Боровский о музейно-выставочном центре ЗИЛАРТ — Коммерсантъ', url: 'https://www.kommersant.ru/doc/8270163' }
+    ]
+  },
+
+  {
+    id: 'msk-zilart-bruskin',
+    title: 'Гриша Брускин. DIES ILLA',
+    venueId: 'zilart',
+    venue: 'Музей «ЗИЛАРТ», 5 этаж',
+    city: 'moscow',
+    category: 'contemporary',
+    start: '2025-12-02',
+    end: '2026-09-27',
+    address: 'бульвар Братьев Весниных, 3',
+    url: 'https://zilartmuseum.ru/exhibitions/dies-illa/',
+    ticketUrl: 'https://tickets.zilartmuseum.ru',
+    price: null,
+    summary: 'Тотальная инсталляция на целый этаж: «театр скульптур» с тенями, марионетками и видеопроекцией. Финальная часть трилогии, начатой «Сменой декораций» в русском павильоне Венецианской биеннале 2017 года. Архитектор экспозиции — Игорь Чиркин. 18+, в зале нельзя фотографировать.',
+    why: 'Работа, которую сам Брускин считает кульминацией: латинское «dies illa» — «тот день», Судный день. Разберут 27 сентября и, скорее всего, целиком уже не соберут — этаж уходит под следующий проект.',
+    signals: { institution: 2, artist: 3, scale: 3, curator: 2, rarity: 3, media: 2, novelty: 1 },
+    hype: null,
+    discovery: false,
+    source: {
+      primary: 'https://zilartmuseum.ru/exhibitions/dies-illa/',
+      retrieved: '2026-09-07',
+      lastChecked: '2026-09-07',
+      confidence: 'high',
+      note: 'Дата закрытия 27.09.2026 — с официальной страницы выставки. Афиши указывают 17 января, это ошибка агрегаторов.'
+    },
+    media: [
+      { title: 'Гриша Брускин о выставке Dies Illa — The Blueprint', url: 'https://theblueprint.ru/culture/art/bruskin-interview' },
+      { title: 'Как смотреть выставку Гриши Брускина — Black Square', url: 'https://bksq.art/events/grisha-bruskin-dies-illa-zilart/' }
+    ]
+  },
+
+  {
+    id: 'msk-zilart-africa',
+    title: 'Африканское искусство: боги, предки, жизнь',
+    venueId: 'zilart',
+    venue: 'Музей «ЗИЛАРТ», 4 этаж',
+    city: 'moscow',
+    category: 'history',
+    start: '2025-12-02',
+    end: '2027-01-17',
+    address: 'бульвар Братьев Весниных, 3',
+    url: 'https://zilartmuseum.ru/exhibitions/',
+    ticketUrl: 'https://tickets.zilartmuseum.ru',
+    price: null,
+    summary: 'Больше тысячи предметов традиционного искусства народов Тропической Африки — основа выставки, собрание петербургских художников Михаила и Леонида Звягиных. Архитектор Евгений Асс выстроил пространство как череду тематических «островов»: предки, звери, магия, регалии воинов, погребальные обряды. 12+.',
+    why: 'Бронзовый ритуальный сосуд-леопард из Бенина XVI–XIX веков и наголовник чивара — вещи такого уровня в России показывают в двух-трёх местах, и нигде тысячей сразу. Самая масштабная экспозиция музея.',
+    signals: { institution: 2, artist: 1, scale: 3, curator: 2, rarity: 2, media: 2, novelty: 1 },
+    hype: null,
+    discovery: false,
+    source: {
+      primary: 'https://zilartmuseum.ru/exhibitions/',
+      retrieved: '2026-09-07',
+      lastChecked: '2026-09-07',
+      confidence: 'high'
+    },
+    media: [
+      { title: 'Магия медного куба: в Москве открылся музей «ЗИЛАРТ» — The Art Newspaper Russia', url: 'https://www.theartnewspaper.ru/posts/20251204-wlbz/' },
+      { title: 'Что посмотреть в новом музее «ЗИЛАРТ» — BURO.', url: 'https://www.buro247.ru/culture/arts/04-dec-2025-zilart-museum.html' }
+    ]
+  },
+
   /* ======================== САНКТ-ПЕТЕРБУРГ ======================== */
 
   {
